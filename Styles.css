@@ -1,0 +1,786 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Sidebar Menu */
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #007bff;
+    padding-top: 60px;
+    transition: left 0.3s ease-in-out;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Menu Button */
+.menu-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Home Section */
+#home {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+}
+
+
+.home-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.home-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+     color: black;
+}
+
+.home-content .btn {
+    display: inline-block;
+    background-color: #ff5733;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.home-content .btn:hover {
+    background-color: #e04e1d;
+    transform: scale(1.1);
+}
+
+/* Services & Job Listings */
+#services, #jobs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8px 20px;
+    margin-bottom: 5px; 
+    margin-top: 5px;/* Yeh 5px ka gap set karega */
+
+}
+
+.service-card, .job-listing {
+    background: white;
+    padding: 10px;
+    margin: 20px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 80%;
+    max-width: 600px;
+}
+
+.service-card:hover, .job-listing:hover {
+    transform: translateY(-10px);
+}
+
+.service-card h3, .job-listing h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.service-card p, .job-listing p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.service-card .btn, .job-listing .btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.service-card .btn:hover, .job-listing .btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #services, #jobs {
+        padding: 60px 15px;
+    }
+    .service-card, .job-listing {
+        width: 90%;
+        padding: 30px;
+    }
+}
+/* Responsive Thin Line (Divider) */
+.section-divider {
+    width: 90%; /* Responsive width */
+    max-width: auto; /* Max limit */
+    height: 2px; /* Patli si line */
+    background: #ccc; /* Gray color */
+    margin: 10px auto; /* Upar neeche spacing */
+}
+/* Light Black Footer */
+footer {
+    background-color: #333; /* Light Black */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Increase Section Height */
+#services, #jobs {
+    min-height: 600px; /* Increase height */
+    padding: 60px 20px; /* Extra padding */
+}
+
+body {
+    background-color: lightgray; /* Whole website background except header & footer */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: lessblue;
+}
+.service-card {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    perspective: 1000px;
+}
+
+.service-card:hover {
+    transform: translateY(-10px) rotateX(10deg) rotateY(5deg);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3);
+}
+.job-card {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    perspective: 1000px;
+}
+
+.job-card:hover {
+    transform: translateY(-10px) rotateX(10deg) rotateY(5deg);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.jobs-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    perspective: 1000px;
+}
+
+.job-card {
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    border-radius: 15px;
+    text-align: center;
+    transform-style: preserve-3d;
+}
+
+.job-card:hover {
+    transform: translateY(-10px) rotateY(10deg) scale(1.05);
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.job-card h3 {
+    color: #007bff;
+    font-size: 1.8rem;
+}
+
+.job-card p {
+    color: black;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.job-card .btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: 0.3s ease;
+}
+
+.job-card .btn:hover {
+    background-color: #ff4b5c;
+    color: white;
+    transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+    .jobs-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .jobs-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+/* Sidebar Menu */
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #007bff;
+    padding-top: 60px;
+    transition: left 0.3s ease-in-out;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Menu Button */
+.menu-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.job-card {
+    background: light ;
+    padding: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.6s ease, box-shadow 0.4s ease;
+    border-radius: 15px;
+    text-align: center;
+    transform-style: preserve-3d;
+}
+
+.job-card:hover {
+    transform: translateY(-10px) scale(1.08) rotateY(5deg);
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.5);
+}
+.job-card {
+    transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+    transform: scale(1.05);
+}
+
+/* WHO WE ARE */
+
+#who-we-are {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.who-we-are-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.who-we-are-container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.who-we-are-container h2 {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.who-we-are-container p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 1024px) {
+    .who-we-are-container {
+        padding: 25px;
+    }
+    .who-we-are-container h2 {
+        font-size: 2.2rem;
+    }
+    .who-we-are-container p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .who-we-are-container {
+        padding: 20px;
+    }
+    .who-we-are-container h2 {
+        font-size: 2rem;
+    }
+    .who-we-are-container p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .who-we-are-container {
+        padding: 15px;
+    }
+    .who-we-are-container h2 {
+        font-size: 1.8rem;
+    }
+    .who-we-are-container p {
+        font-size: 0.95rem;
+    }
+}
+
+/* ASSOCIATE PARTENRS */
+
+#associate-partners {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.associate-partners-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #007bff;
+}
+
+.scrolling-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+    gap: 20px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
+
+.scrolling-item {
+    min-width: 200px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.scrolling-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+.scrolling-item img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .scrolling-item {
+        min-width: 150px;
+        height: 120px;
+    }
+}
+
+/* AWARD */
+#excellence-awards {
+    padding: 60px 0;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.awards-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #007bff;
+}
+
+/* Slider Container */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Slides */
+.slides {
+    display: flex;
+    transition: transform 1s ease;
+}
+
+/* Individual Slide */
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    transition: opacity 0.5s;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+    .awards-container h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .awards-container h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* TEAM CARD */
+
+#about-team {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.team-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #007bff;
+}
+
+/* Team Cards Wrapper */
+.team-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Individual Card */
+.team-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.team-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.team-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.team-info h3 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.team-info p {
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .team-info h3 {
+        font-size: 1.3rem;
+    }
+    .team-info p {
+        font-size: 0.9rem;
+    }
+}
+
+/* asso Partners  cards */
+
+ body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .heading {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            padding: 20px;
+        }
+        .card {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .card-content {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 12px;
+            transition: background 0.3s;
+        }
+        .card:hover .card-content {
+            background: rgba(0, 0, 0, 0.9);
+        }
+        .card button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .card button:hover {
+            background-color: #2563eb;
+        }
+
+/* happy recruit cards */
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .heading {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            padding: 20px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            color: black;
+            position: relative;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+        }
+        .card-content {
+            padding: 20px;
+            border-radius: 12px;
+        }
+        .card button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .card button:hover {
+            background-color: #2563eb;
+        }
